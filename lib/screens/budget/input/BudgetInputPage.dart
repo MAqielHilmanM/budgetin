@@ -1,5 +1,6 @@
+import 'package:budgetin/screens/budget/form/BudgetFormDialog.dart';
 import 'package:budgetin/widget/CustomTheme.dart';
-import 'package:budgetin/widget/buttons/Button.dart';
+import 'package:budgetin/widget/buttons/WidgetButton.dart';
 import 'package:budgetin/widget/cards/WidgetCard.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
@@ -103,7 +104,13 @@ class _BudgetInputPageState extends State<BudgetInputPage> {
             sliver: SliverGrid(
                 delegate: SliverChildListDelegate([
                   WidgetCardBudget.input("20.000.000", "makan"),
-                  WidgetCardBudget.empty()
+                  InkWell(
+                    onTap: () {
+                      showDialog(context: context,
+                      builder: (BuildContext context)=> BudgetFormDialog());
+                    },
+                    child: WidgetCardBudget.empty(),
+                  )
                 ]),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -119,11 +126,11 @@ class _BudgetInputPageState extends State<BudgetInputPage> {
                 Padding(
                     padding: EdgeInsets.only(
                         bottom: ScreenUtil.instance.setHeight(21.0))),
-                ButtonLong.large("Done"),
+                WidgetButton.large("Done"),
                 Padding(
                     padding: EdgeInsets.only(
                         bottom: ScreenUtil.instance.setHeight(21.0))),
-                ButtonLong.largeOutline("Skip"),
+                WidgetButton.largeOutline("Skip"),
                 Padding(
                     padding: EdgeInsets.only(
                         bottom: ScreenUtil.instance.setHeight(21.0))),

@@ -1,7 +1,7 @@
 import 'package:budgetin/screens/register/RegisterPage.dart';
 import 'package:budgetin/utils/Assets.dart';
 import 'package:budgetin/widget/CustomTheme.dart';
-import 'package:budgetin/widget/buttons/Button.dart';
+import 'package:budgetin/widget/buttons/WidgetButton.dart';
 import 'package:budgetin/widget/form/WidgetForm.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(19.0))),
             WidgetForm.password("password", null), //put controller here
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(36.0))),
-            ButtonLong.large("Login"),
+            WidgetButton.large("Login"),
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(126.0))),
             Container(
               child: Row(

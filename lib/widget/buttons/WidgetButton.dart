@@ -3,7 +3,7 @@ import 'package:budgetin/widget/CustomTheme.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
 
-class ButtonLong extends StatelessWidget {
+class WidgetButton extends StatelessWidget {
   final String text;
   final double width;
   final double height;
@@ -12,14 +12,14 @@ class ButtonLong extends StatelessWidget {
 
   var isOutline = false;
 
-  ButtonLong.large(
+  WidgetButton.large(
     this.text, {
     this.onPressed,
   })  : width = 372.0,
         height = 53.0,
         sizeIcon = 17.78;
 
-  ButtonLong.largeOutline(
+  WidgetButton.largeOutline(
     this.text, {
     this.onPressed,
   })  : width = 372.0,
@@ -27,7 +27,7 @@ class ButtonLong extends StatelessWidget {
         sizeIcon = 17.78,
         isOutline = true;
 
-  ButtonLong(this.text,
+  WidgetButton(this.text,
       {this.height, this.width, this.onPressed, this.sizeIcon});
 
   @override
@@ -47,21 +47,21 @@ class ButtonLong extends StatelessWidget {
   }
 }
 
-class ButtonDialog extends StatelessWidget {
+class WidgetButtonDialog extends StatelessWidget {
   final String text;
   final double width;
   final double height;
   final double sizeIcon;
   final VoidCallback onPressed;
 
-  ButtonDialog.large(
+  WidgetButtonDialog.large(
     this.text, {
     this.onPressed,
   })  : width = 372.0,
         height = 53.0,
         sizeIcon = 17.78;
 
-  ButtonDialog(this.text,
+  WidgetButtonDialog(this.text,
       {this.height, this.width, this.onPressed, this.sizeIcon});
 
   @override

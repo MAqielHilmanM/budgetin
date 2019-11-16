@@ -17,5 +17,7 @@ class Assets{
   static const String iconOnboard2 =  "assets/images/ic_onboard2/ic_onboard2.png";
   static const String iconOnboard3 =  "assets/images/ic_onboard3/ic_onboard3.png";
   static const String iconPlusBlue =  "assets/images/ic_plus_blue/ic_plus_blue.png";
-  static const String iconPlusEhite =  "assets/images/ic_plus_white/ic_plus_white.png";
+  static const String iconPlusWhite =  "assets/images/ic_plus_white/ic_plus_white.png";
+  static const String iconSave = "assets/images/ic_save/ic_save.png";
+  static const String iconWithdraw= "assets/images/ic_withdraw/ic_withdraw.png";
 }

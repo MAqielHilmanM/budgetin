@@ -43,6 +43,27 @@ class WidgetText extends StatelessWidget {
         fontStyle = FontStyle.normal,
         fontWeight = FontWeight.w500;
 
+  WidgetText.poppinsMediumGreenLight18(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 18.0,
+        fontFamily = "Poppins",
+        color = CustomTheme.colorGreenLight,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w500;
+
+  WidgetText.poppinsMediumBlueDark18(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 18.0,
+        fontFamily = "Poppins",
+        color = CustomTheme.colorBlueDark,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w500;
+
+  WidgetText.poppinsLightBlack20(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 20.0,
+        fontFamily = "Poppins",
+        color = CustomTheme.colorBlack,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w300;
+
   WidgetText.poppinsMediumGray25(this.text,{this.textAlign = TextAlign.start})
       : fontSize = 25.0,
         fontFamily = "Poppins",
