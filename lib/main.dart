@@ -1,3 +1,5 @@
+import 'package:budgetin/screens/budget/detail/BudgetDetailPage.dart';
+import 'package:budgetin/screens/budget/list/BudgetListPage.dart';
 import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:budgetin/screens/onboarding/onboardingScreen.dart';
 import 'package:budgetin/screens/splashscreen/SplashScreen.dart';
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new SplashScreen(),
+      home: new BudgetDetailPage(),
       routes: <String, WidgetBuilder>{
         '/screens/onboarding': (BuildContext context) => OnBoardingScreen(),
       },
