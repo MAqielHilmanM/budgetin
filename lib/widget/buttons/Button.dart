@@ -10,13 +10,25 @@ class ButtonLong extends StatelessWidget {
   final double sizeIcon;
   final VoidCallback onPressed;
 
-  ButtonLong.large(this.text, {
+  var isOutline = false;
+
+  ButtonLong.large(
+    this.text, {
     this.onPressed,
   })  : width = 372.0,
         height = 53.0,
         sizeIcon = 17.78;
 
-  ButtonLong(this.text, {this.height, this.width, this.onPressed, this.sizeIcon});
+  ButtonLong.largeOutline(
+    this.text, {
+    this.onPressed,
+  })  : width = 372.0,
+        height = 53.0,
+        sizeIcon = 17.78,
+        isOutline = true;
+
+  ButtonLong(this.text,
+      {this.height, this.width, this.onPressed, this.sizeIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +39,9 @@ class ButtonLong extends StatelessWidget {
         shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(10.0),
             side: BorderSide(color: CustomTheme.colorBlueDark)),
-        onPressed: onPressed,
-        color: CustomTheme.colorBlueDark,
-        textColor: Colors.white,
-        child: WidgetText.poppinsMediumWhite24(text),
+        onPressed: onPressed!=null? onPressed:()=>{},
+        color: !isOutline ? CustomTheme.colorBlueDark : CustomTheme.colorWhite,
+        child: !isOutline ? WidgetText.poppinsMediumWhite24(text): WidgetText.poppinsMediumBlue24(text),
       ),
     );
   }
@@ -43,13 +54,15 @@ class ButtonDialog extends StatelessWidget {
   final double sizeIcon;
   final VoidCallback onPressed;
 
-  ButtonDialog.large(this.text, {
+  ButtonDialog.large(
+    this.text, {
     this.onPressed,
   })  : width = 372.0,
         height = 53.0,
         sizeIcon = 17.78;
 
-  ButtonDialog(this.text, {this.height, this.width, this.onPressed, this.sizeIcon});
+  ButtonDialog(this.text,
+      {this.height, this.width, this.onPressed, this.sizeIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -65,9 +78,7 @@ class ButtonDialog extends StatelessWidget {
           color: CustomTheme.colorBlueDark),
     );
 
-    return Center(
-      child: asymetricalRoundedCorners
-    );
+    return Center(child: asymetricalRoundedCorners);
   }
 }
 
@@ -133,7 +144,6 @@ class ButtonAdd extends StatelessWidget {
           ),
         ),
       ),
-
     );
   }
 }

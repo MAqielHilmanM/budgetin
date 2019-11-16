@@ -111,7 +111,7 @@ class WidgetCardBudget extends StatelessWidget {
           ),
           Padding(padding: EdgeInsets.only(
               top: ScreenUtil.instance.setHeight(8.0))),
-          Container(
+          used != null ? Container(
             child: Row(
               children: <Widget>[
                 Padding(padding: EdgeInsets.only(
@@ -123,13 +123,13 @@ class WidgetCardBudget extends StatelessWidget {
                 WidgetText.poppinsBoldYellow16(total)
               ],
             ),
-          ),
-          Container(
+          ): Padding(padding: EdgeInsets.all(4),),
+          used != null? Container(
             width: ScreenUtil.instance.width,
             child: Divider(
               color: CustomTheme.colorWhite,
             ),
-          ),
+          ): Padding(padding: EdgeInsets.all(4),),
           Container(
             child: Row(
               children: <Widget>[

@@ -1,4 +1,5 @@
 import 'package:budgetin/widget/CustomTheme.dart';
+import 'package:budgetin/widget/buttons/Button.dart';
 import 'package:budgetin/widget/cards/WidgetCard.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,6 @@ class _BudgetInputPageState extends State<BudgetInputPage> {
     return Scaffold(
       backgroundColor: CustomTheme.colorWhite,
       body: CustomScrollView(
-
         slivers: <Widget>[
           SliverList(
               delegate: SliverChildListDelegate([
@@ -98,7 +98,8 @@ class _BudgetInputPageState extends State<BudgetInputPage> {
             )
           ])),
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: ScreenUtil.instance.setWidth(14.0)),
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil.instance.setWidth(14.0)),
             sliver: SliverGrid(
                 delegate: SliverChildListDelegate([
                   WidgetCardBudget.input("20.000.000", "makan"),
@@ -109,6 +110,25 @@ class _BudgetInputPageState extends State<BudgetInputPage> {
                     childAspectRatio: 1.3,
                     mainAxisSpacing: 2,
                     crossAxisSpacing: 2)),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtil.instance.setWidth(16)),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate([
+                Padding(
+                    padding: EdgeInsets.only(
+                        bottom: ScreenUtil.instance.setHeight(21.0))),
+                ButtonLong.large("Done"),
+                Padding(
+                    padding: EdgeInsets.only(
+                        bottom: ScreenUtil.instance.setHeight(21.0))),
+                ButtonLong.largeOutline("Skip"),
+                Padding(
+                    padding: EdgeInsets.only(
+                        bottom: ScreenUtil.instance.setHeight(21.0))),
+              ]),
+            ),
           )
         ],
       ),
