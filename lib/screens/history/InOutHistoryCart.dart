@@ -1,4 +1,4 @@
-import 'package:budgetin/widget/buttons/Button.dart';
+import 'package:budgetin/widget/buttons/WidgetButton.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

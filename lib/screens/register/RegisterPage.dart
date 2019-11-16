@@ -2,7 +2,7 @@ import 'package:budgetin/screens/budget/input/BudgetInputPage.dart';
 import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:budgetin/utils/Assets.dart';
 import 'package:budgetin/widget/CustomTheme.dart';
-import 'package:budgetin/widget/buttons/Button.dart';
+import 'package:budgetin/widget/buttons/WidgetButton.dart';
 import 'package:budgetin/widget/form/WidgetForm.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +52,7 @@ class _RegisterPageState extends State<RegisterPage> {
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(20.0))),
             WidgetForm.amount("set your amount", null), //put controller here
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(36.0))),
-            ButtonLong.large("Next", onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+            WidgetButton.large("Next", onPressed: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (BuildContext context) => BudgetInputPage()))),
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(33.0))),
             Container(
