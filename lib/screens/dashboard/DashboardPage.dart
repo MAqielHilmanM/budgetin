@@ -20,7 +20,14 @@ class _DashboardPageState extends State<DashboardPage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: WidgetText.poppinsLightBlack25("Lorem Ipsum")
+        child: Column(
+          children: <Widget>[
+            WidgetForm.username("username", null),
+            WidgetForm.password("username", null),
+            WidgetForm.email("username", null),
+            WidgetForm.amount("username", null)
+          ],
+        )
       )
     );
   }
