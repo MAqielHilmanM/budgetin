@@ -105,7 +105,6 @@ class _InvestmentListPageState extends State<InvestmentListPage> {
                         ],
                       ),
                       Container(
-                        height: 20,
                         child: Divider(
                           color: CustomTheme.colorWhite,
                           thickness: 2,
