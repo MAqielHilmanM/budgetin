@@ -1,3 +1,4 @@
+import 'package:budgetin/utils/Assets.dart';
 import 'package:budgetin/widget/CustomTheme.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
@@ -87,8 +88,8 @@ class ButtonBack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 372,
-      height: 53,
+      width: 50,
+      height: 45.97,
       child: RaisedButton(
         shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(10.0),
@@ -96,8 +97,43 @@ class ButtonBack extends StatelessWidget {
         onPressed: () {},
         color: CustomTheme.colorBlueDark,
         textColor: Colors.white,
-        child: Text("Long Button"),
+        child: Center(
+          child: Image.asset(Assets.iconArrowLeft),
+        ),
       ),
+    );
+  }
+}
+
+class ButtonAdd extends StatelessWidget {
+  final double width;
+  final double height;
+  final double sizeIcon;
+  final VoidCallback onPressed;
+
+  ButtonAdd.large({
+    this.onPressed,
+  })  : width = 372.0,
+        height = 53.0,
+        sizeIcon = 17.78;
+
+  ButtonAdd({this.height, this.width, this.onPressed, this.sizeIcon});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 60,
+      height: 60,
+      child: ClipOval(
+        child: RaisedButton(
+          onPressed: () {},
+          color: CustomTheme.colorYellow,
+          child: Center(
+            child: Image.asset(Assets.iconPlusBlue),
+          ),
+        ),
+      ),
+
     );
   }
 }

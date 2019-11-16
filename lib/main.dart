@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       ),
       home: new SplashScreen(),
       routes: <String, WidgetBuilder> {
-    '/screens/onboarding': (BuildContext context) => new OnBoardingScreen()
+    '/screens/onboarding': (BuildContext context) => new DashboardPage()
   },
     );
   }
