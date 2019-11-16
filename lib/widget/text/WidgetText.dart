@@ -210,6 +210,27 @@ class WidgetText extends StatelessWidget {
         fontStyle = FontStyle.normal,
         fontWeight = FontWeight.w600;
 
+  WidgetText.montserratSemiBoldBlack20(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 20.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorBlack,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w600;
+
+  WidgetText.montserratSemiBoldBlue20(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 20.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorBlue,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w600;
+  
+  WidgetText.montserratSemiBoldBlueDark20(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 20.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorBlueDark,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w600;
+
   WidgetText.montserratRegularBlack25(this.text,{this.textAlign = TextAlign.start})
       : fontSize = 25.0,
         fontFamily = "Montserrat",
@@ -219,6 +240,13 @@ class WidgetText extends StatelessWidget {
 
   WidgetText.montserratBoldBlack25(this.text,{this.textAlign = TextAlign.start})
       : fontSize = 25.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorBlack,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w700;
+
+  WidgetText.montserratBoldBlack20(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 20.0,
         fontFamily = "Montserrat",
         color = CustomTheme.colorBlack,
         fontStyle = FontStyle.normal,
@@ -237,6 +265,13 @@ class WidgetText extends StatelessWidget {
         color = CustomTheme.colorBlack,
         fontStyle = FontStyle.normal,
         fontWeight = FontWeight.w400;
+  
+  WidgetText.montserratRegularBlack20(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 20.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorBlack,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w400;
 
   WidgetText.montserratRegularBlue14(this.text,{this.textAlign = TextAlign.start})
       : fontSize = 14.0,
@@ -244,6 +279,27 @@ class WidgetText extends StatelessWidget {
         color = CustomTheme.colorBlue,
         fontStyle = FontStyle.normal,
         fontWeight = FontWeight.w400;
+
+  WidgetText.montserratRegularBlue18(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 18.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorBlue,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w400;
+
+  WidgetText.montserratLightBlack18(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 18.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorBlack,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w300;
+
+  WidgetText.montserratLightBlue18(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 18.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorBlue,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w300;
 
   WidgetText.montserratMediumGrayLight20(this.text,{this.textAlign = TextAlign.start})
       : fontSize = 20.0,

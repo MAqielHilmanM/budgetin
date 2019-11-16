@@ -210,7 +210,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: Text("Get Started", style: TextStyle(color: Colors.white, fontSize: 18, fontFamily: "Montserrat"),),
                 ),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>
-                  DashboardPage(title: "Flutter Demo Home Page",)
+                  DashboardPage()
                 )),
               ),
             ),
