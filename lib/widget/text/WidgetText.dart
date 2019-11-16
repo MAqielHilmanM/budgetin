@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../CustomTheme.dart';
 
@@ -217,10 +218,24 @@ class WidgetText extends StatelessWidget {
         fontStyle = FontStyle.normal,
         fontWeight = FontWeight.w500;
 
+  WidgetText.montserratRegularWhite25(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 25.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorWhite,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w500;
+
   WidgetText.montserratBoldBlack25(this.text,{this.textAlign = TextAlign.start})
       : fontSize = 25.0,
         fontFamily = "Montserrat",
         color = CustomTheme.colorBlack,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w700;
+
+  WidgetText.montserratBoldWhite25(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 25.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorWhite,
         fontStyle = FontStyle.normal,
         fontWeight = FontWeight.w700;
 
@@ -230,6 +245,49 @@ class WidgetText extends StatelessWidget {
         color = CustomTheme.colorGrayLight,
         fontStyle = FontStyle.normal,
         fontWeight = FontWeight.w500;
+
+  WidgetText.montserratMediumWhite25(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 25.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorWhite,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w500;
+
+  WidgetText.montserratMediumBlack25(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 25.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorBlack,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w500;
+
+  WidgetText.montserratMediumYellow25(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 25.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorYellow,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w500;
+
+
+  WidgetText.montserratRegularYellow48(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 48.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorYellow,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w400;
+
+  WidgetText.montserratSemiBoldYellow48(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 48.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorYellow,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w600;
+
+  WidgetText.montserratSemiBoldGray24(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 24.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorGray,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w600;
 
   WidgetText.montserratRegularBlack14(this.text,{this.textAlign = TextAlign.start})
       : fontSize = 14.0,
@@ -254,6 +312,16 @@ class WidgetText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    double defaultScreenWidth = 400.0;
+    double defaultScreenHeight = 810.0;
+
+    ScreenUtil.instance = ScreenUtil(
+      width: defaultScreenWidth,
+      height: defaultScreenHeight,
+      allowFontScaling: true,
+    )..init(context);
+
     return Text(
       text,
       textAlign: textAlign,
@@ -263,7 +331,7 @@ class WidgetText extends StatelessWidget {
           fontStyle: fontStyle,
           fontFamily: fontFamily,
           fontWeight: fontWeight,
-          fontSize: fontSize),
+          fontSize: ScreenUtil.instance.setSp(fontSize)),
     );
   }
 }
