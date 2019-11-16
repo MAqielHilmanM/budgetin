@@ -41,7 +41,7 @@ class WidgetCard extends StatelessWidget {
             width: 176,
             height: 111,
             child: Center(
-              child: Image.asset(Assets.iconPlusEhite),
+              child: Image.asset(Assets.iconPlusWhite),
             ),
           ),
         ),
@@ -227,6 +227,85 @@ class WidgetCardHistory extends StatelessWidget {
                       isIncome
                           ? Image.asset(Assets.iconArrowDown)
                           : Image.asset(Assets.iconArrowUp)
+                    ],
+                  )
+                ],
+              )),
+        ),
+      ),
+    );
+  }
+}
+
+class WidgetCardInvestment extends StatelessWidget {
+  final String title;
+  final String date;
+  final String value;
+  var isSaving = false;
+
+  final double width = double.infinity;
+  final double height = 82.0;
+  final VoidCallback onPressed;
+
+  WidgetCardInvestment.saving(
+    this.title,
+    this.date,
+    this.value, {
+    this.onPressed,
+  }) : isSaving = true;
+
+  WidgetCardInvestment.withdraw(
+    this.title,
+    this.date,
+    this.value, {
+    this.onPressed,
+  }) : isSaving = false;
+
+  @override
+  Widget build(BuildContext context) {
+    double defaultScreenWidth = 400.0;
+    double defaultScreenHeight = 810.0;
+
+    ScreenUtil.instance = ScreenUtil(
+      width: defaultScreenWidth,
+      height: defaultScreenHeight,
+      allowFontScaling: true,
+    )..init(context);
+
+    return Center(
+      child: Card(
+        elevation: 4,
+        color: CustomTheme.colorWhite,
+        child: InkWell(
+          splashColor: Colors.white.withAlpha(30),
+          onTap: () {
+            print('Card tapped.');
+          },
+          child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              width: width,
+              height: height,
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      WidgetText.poppinsLightBlack18("Weight"),
+                      WidgetText.poppinsLightGrayDark18(date),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          WidgetText.poppinsMediumBlack25(value),
+                          WidgetText.poppinsLightBlack20(" Gr"),
+                        ],
+                      ),
+                      isSaving
+                          ? WidgetText.poppinsMediumGreenLight18("Saving")
+                          : WidgetText.poppinsMediumBlueDark18("Withdraw")
                     ],
                   )
                 ],
