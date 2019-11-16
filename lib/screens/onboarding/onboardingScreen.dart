@@ -1,5 +1,5 @@
 import 'package:budgetin/screens/dashboard/DashboardPage.dart';
-import 'package:budgetin/widget/text/WidgetText.dart';
+import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -39,6 +39,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         value: SystemUiOverlayStyle.light,
           child: new Container(
           decoration: BoxDecoration(
+            // gradient: LinearGradient(
+            //   begin: Alignment.topCenter,
+            //   end: Alignment.bottomCenter,
+            //   stops: [0.1, 0.4, 0.7, 0.9],
+            //   colors: [
+            //     Color(0xFF3594DD),
+            //     Color(0xFF4563DB),
+            //     Color(0xFF5036D5),
+            //     Color(0xFF5B16D0),
+            //   ]
+            // )
             color: Colors.white
           ),
           child: Column(
@@ -59,6 +70,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
+                          // Container(
+                          //   alignment: Alignment.topRight,
+                          //   child: FlatButton(
+                          //     onPressed: () => print("skip"),
+                          //     child: Text("Skip", style: TextStyle(color: Color(0xFF2F4DEF), fontSize: 20, fontFamily: "MontserratMedium"))
+                          //   ),
+                          // ),
                           Center(
                             child: Image(
                               image: AssetImage("assets/images/ic_onboard1/ic_onboard1.png"),
@@ -71,14 +89,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(26.0),
-                            child: 
-                            WidgetText(
-                              text: "With BudgetIn you can easily manage your money, it maybe your income, outcome, and also your daily budget.",
-                              color: Color(0xFF444242),
-                              fontSize: 20,
-                              fontFamily: "Montserrat",
+                            child: Text(
+                              "With BudgetIn you can easily manage your money, it maybe your income, outcome, and also your daily budget.",
+                              style: (TextStyle(
+                                color: Color(0xFF444242),
+                                fontSize: 20,
+                                fontFamily: "Montserrat")),
                               textAlign: TextAlign.center,
-                            )
+                              ),
                           )
                         ],
                       ),
@@ -103,14 +121,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(26.0),
-                            child: 
-                            WidgetText(
-                              text: "Save your income and your investment then set your budgets to buy something which important for you.",
-                              color: Color(0xFF444242),
-                              fontSize: 20,
-                              fontFamily: "Montserrat",
+                            child: Text(
+                              "Save your income and your investment then set your budgets to buy something which important for you.",
+                              style: (TextStyle(
+                                color: Color(0xFF444242),
+                                fontSize: 20,
+                                fontFamily: "Montserrat")),
                               textAlign: TextAlign.center,
-                            )
+                              ),
                           )
                         ],
                       ),
@@ -132,14 +150,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(26.0),
-                            child:
-                            WidgetText(
-                              text: "Knowing any range of your investment like gold, cryptocurrency, forex and many more by real time.",
-                              color: Color(0xFF444242),
-                              fontSize: 20,
-                              fontFamily: "Montserrat",
+                            child: Text(
+                              "Knowing any range of your investment like gold, cryptocurrency, forex and many more by real time.",
+                              style: (TextStyle(
+                                color: Color(0xFF444242),
+                                fontSize: 20,
+                                fontFamily: "Montserrat")),
                               textAlign: TextAlign.center,
-                            )
+                              ),
                           )
                         ],
                       ),
@@ -210,7 +228,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: Text("Get Started", style: TextStyle(color: Colors.white, fontSize: 18, fontFamily: "Montserrat"),),
                 ),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>
-                  DashboardPage(title: "Flutter Demo Home Page",)
+                  LoginPage()
                 )),
               ),
             ),

@@ -22,7 +22,7 @@ class WidgetForm extends StatelessWidget {
   WidgetForm.email(this.labelText, this.controller)
       : type = TextInputType.emailAddress;
 
-  WidgetForm.username(this.labelText, this.controller)
+  WidgetForm.text(this.labelText, this.controller)
       : type = TextInputType.text;
 
   WidgetForm.amount(this.labelText, this.controller)
