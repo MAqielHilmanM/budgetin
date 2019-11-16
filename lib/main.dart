@@ -1,4 +1,5 @@
 import 'package:budgetin/screens/dashboard/DashboardPage.dart';
+import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DashboardPage(title: 'Flutter Demo Home Page'),
+      home: LoginPage(),
     );
   }
 }
