@@ -1,4 +1,5 @@
-import 'package:budgetin/widget/buttons/Button.dart';
+import 'package:budgetin/widget/form/WidgetForm.dart';
+import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -19,7 +20,8 @@ class _DashboardPageState extends State<DashboardPage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: ButtonAdd()
-    ));
+        child: WidgetText.poppinsLightBlack25("Lorem Ipsum")
+      )
+    );
   }
 }
