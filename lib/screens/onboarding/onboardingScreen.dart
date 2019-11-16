@@ -71,14 +71,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(26.0),
-                            child: 
-                            WidgetText(
-                              text: "With BudgetIn you can easily manage your money, it maybe your income, outcome, and also your daily budget.",
-                              color: Color(0xFF444242),
-                              fontSize: 20,
-                              fontFamily: "Montserrat",
+                            child: Text(
+                              "With BudgetIn you can easily manage your money, it maybe your income, outcome, and also your daily budget.",
+                              style: (TextStyle(
+                                color: Color(0xFF444242),
+                                fontSize: 20,
+                                fontFamily: "Montserrat")),
                               textAlign: TextAlign.center,
-                            )
+                              ),
                           )
                         ],
                       ),

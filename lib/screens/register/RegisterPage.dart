@@ -1,4 +1,5 @@
-import 'package:budgetin/screens/register/RegisterPage.dart';
+import 'package:budgetin/screens/budget/input/BudgetInputPage.dart';
+import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:budgetin/utils/Assets.dart';
 import 'package:budgetin/widget/CustomTheme.dart';
 import 'package:budgetin/widget/buttons/Button.dart';
@@ -7,16 +8,18 @@ import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  RegisterPage({Key key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
+
+
     double defaultScreenWidth = 400.0;
     double defaultScreenHeight = 810.0;
 
@@ -37,17 +40,21 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: <Widget>[
             Image.asset(Assets.iconAuth),
-            WidgetText.montserratSemiBoldBlack28(
-              "Login",
-              textAlign: TextAlign.center,
-            ),
-            Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(29.0))),
+            WidgetText.montserratSemiBoldBlack28("Register"),
+            Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(28.0))),
+            WidgetForm.text("name", null), //put controller here
+            Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(20.0))),
             WidgetForm.email("email", null), //put controller here
-            Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(19.0))),
+            Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(20.0))),
             WidgetForm.password("password", null), //put controller here
+            Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(20.0))),
+            WidgetForm.password("re password", null), //put controller here
+            Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(20.0))),
+            WidgetForm.amount("set your amount", null), //put controller here
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(36.0))),
-            ButtonLong.large("Login"),
-            Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(126.0))),
+            ButtonLong.large("Next", onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => BudgetInputPage()))),
+            Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(33.0))),
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,12 +67,12 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   InkWell(
                     onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => RegisterPage())),
+                        builder: (BuildContext context) => LoginPage())),
                     child: Column(
                       children: <Widget>[
                         WidgetText.montserratRegularBlack14(
-                            "Don't have an account?"),
-                        WidgetText.montserratRegularBlue14("Register Now"),
+                            "Already have an account?"),
+                        WidgetText.montserratRegularBlue14("Login Now"),
                       ],
                     ),
                   ),

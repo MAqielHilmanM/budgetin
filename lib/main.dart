@@ -1,3 +1,4 @@
+import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:budgetin/screens/onboarding/onboardingScreen.dart';
 import 'package:budgetin/screens/splashscreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
@@ -25,9 +26,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: new SplashScreen(),
-      routes: <String, WidgetBuilder> {
-    '/screens/onboarding': (BuildContext context) => new OnBoardingScreen()
-  },
+      routes: <String, WidgetBuilder>{
+        '/screens/onboarding': (BuildContext context) => OnBoardingScreen(),
+      },
     );
   }
 }
