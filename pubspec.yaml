@@ -25,7 +25,7 @@ dependencies:
   flutter_screenutil: ^0.6.0
   cupertino_icons: ^0.1.2
   intl: ^0.16.0
-
+  bubble_tab_indicator: ^0.1.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
