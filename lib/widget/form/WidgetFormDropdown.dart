@@ -1,3 +1,4 @@
+import 'package:budgetin/widget/CustomTheme.dart';
 import 'package:flutter/material.dart';
 
 class CustomDropDownButton extends StatefulWidget {
@@ -41,7 +42,13 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           baseStyle: new TextStyle(
               fontSize: 16.0, fontFamily: 'Montserrat', color: Colors.grey),
           isFocused: false,
-          decoration: new InputDecoration(),
+          decoration: new InputDecoration(
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                style: BorderStyle.solid, color: CustomTheme.colorBlueDark
+              )
+            ),
+          ),
           child: new DropdownButtonHideUnderline(
             child: new DropdownButton<String>(
               

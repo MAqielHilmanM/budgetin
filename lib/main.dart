@@ -1,8 +1,12 @@
-import 'package:budgetin/screens/budget/detail/BudgetDetailPage.dart';
-import 'package:budgetin/screens/budget/list/BudgetListPage.dart';
+import 'package:budgetin/screens/budget/form/BudgetFormDialog.dart';
+import 'package:budgetin/screens/budget/form/BudgetFormDialog.dart';
+import 'package:budgetin/screens/budget/input/BudgetInputPage.dart';
+import 'package:budgetin/screens/dashboard/DashboardFormDialog.dart';
+import 'package:budgetin/screens/history/InOutHistoryPage.dart';
 import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:budgetin/screens/onboarding/onboardingScreen.dart';
 import 'package:budgetin/screens/splashscreen/SplashScreen.dart';
+import 'package:budgetin/widget/form/WidgetForm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -27,10 +31,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new BudgetDetailPage(),
+      home: new DashboardFormDialog(),
       routes: <String, WidgetBuilder>{
-        '/screens/onboarding': (BuildContext context) => OnBoardingScreen(),
+        '/screens/onboarding': (BuildContext context) => DashboardFormDialog(),
       },
     );
   }
 }
+
