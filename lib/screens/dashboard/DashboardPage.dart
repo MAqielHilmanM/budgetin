@@ -1,3 +1,5 @@
+import 'package:budgetin/screens/login/LoginPage.dart';
+import 'package:budgetin/screens/onboarding/onboardingScreen.dart';
 import 'package:budgetin/widget/form/WidgetForm.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,7 @@ class _DashboardPageState extends State<DashboardPage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: WidgetText.poppinsLightBlack25("Lorem Ipsum")
+        child: Text("")
       )
     );
   }

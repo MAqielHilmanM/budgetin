@@ -1,4 +1,4 @@
-import 'package:budgetin/screens/onboarding/onboardingScreen.dart';
+import 'package:budgetin/screens/history/InOutHistoryCart.dart';
 import 'package:budgetin/screens/splashscreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,8 +26,9 @@ class MyApp extends StatelessWidget {
       ),
       home: new SplashScreen(),
       routes: <String, WidgetBuilder> {
-    '/screens/onboarding': (BuildContext context) => new DashboardPage()
-  },
+    '/screens/onboarding': (BuildContext context) => new MainApp()
+    },
     );
   }
+
 }
