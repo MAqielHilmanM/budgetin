@@ -1,5 +1,6 @@
 import 'package:budgetin/utils/Assets.dart';
 import 'package:budgetin/widget/CustomTheme.dart';
+import 'package:budgetin/widget/buttons/Button.dart';
 import 'package:budgetin/widget/form/WidgetForm.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
@@ -26,9 +27,9 @@ class _LoginPageState extends State<LoginPage> {
           Padding(padding: EdgeInsets.only(bottom: 19)),
           WidgetForm.password("password", null), //put controller here
           Padding(padding: EdgeInsets.only(bottom: 10)),
-          WidgetText.montserratMediumGrayLight18("forgot password"),
+          WidgetText.montserratMediumGrayLight18("forgot password",textAlign: TextAlign.end),
           Padding(padding: EdgeInsets.only(bottom: 36)),
-
+          ButtonLong.large("Login")
         ],
       ),
     );

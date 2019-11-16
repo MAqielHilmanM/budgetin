@@ -1,8 +1,9 @@
 import 'package:budgetin/widget/CustomTheme.dart';
+import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
 
 class ButtonLong extends StatelessWidget {
-  final Text text;
+  final String text;
   final double width;
   final double height;
   final double sizeIcon;
@@ -28,14 +29,14 @@ class ButtonLong extends StatelessWidget {
         onPressed: () {},
         color: CustomTheme.colorBlueDark,
         textColor: Colors.white,
-        child: text,
+        child: WidgetText.poppinsMediumWhite24(text),
       ),
     );
   }
 }
 
 class ButtonDialog extends StatelessWidget {
-  final Text text;
+  final String text;
   final double width;
   final double height;
   final double sizeIcon;
@@ -55,7 +56,7 @@ class ButtonDialog extends StatelessWidget {
       width: 372,
       height: 53,
       padding: EdgeInsets.all(0.0),
-      child: Center(child: text),
+      child: Center(child: WidgetText.poppinsRegularWhite20(text)),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
               bottomRight: Radius.circular(15.0),
