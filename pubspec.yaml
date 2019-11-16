@@ -63,6 +63,8 @@ flutter:
     - assets/images/ic_plus_blue/ic_plus_blue.png
     - assets/images/ic_plus_white/ic_plus_white.png
     - assets/images/ic_profile/ic_profile.png
+    - assets/images/ic_save/ic_save.png
+    - assets/images/ic_withdraw/ic_withdraw.png
 
   fonts:
     - family: Montserrat
