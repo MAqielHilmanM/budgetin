@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../CustomTheme.dart';
 
@@ -30,16 +31,27 @@ class WidgetForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    double defaultScreenWidth = 400.0;
+    double defaultScreenHeight = 810.0;
+
+    ScreenUtil.instance = ScreenUtil(
+      width: defaultScreenWidth,
+      height: defaultScreenHeight,
+      allowFontScaling: true,
+    )..init(context);
+
+
     return new Container(
       child: new TextFormField(
-        autofocus: true,
+        autofocus: false,
         obscureText: isPassword,
         controller: controller,
         keyboardType: type,
         decoration: new InputDecoration(
             labelText: labelText,
             labelStyle:
-                new TextStyle(fontSize: 20.0, fontFamily: 'Montserrat')),
+                new TextStyle(fontSize: ScreenUtil.instance.setSp(20.0), fontFamily: 'Montserrat')),
       ),
     );
   }

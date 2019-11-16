@@ -26,7 +26,7 @@ class ButtonLong extends StatelessWidget {
         shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(10.0),
             side: BorderSide(color: CustomTheme.colorBlueDark)),
-        onPressed: () {},
+        onPressed: onPressed,
         color: CustomTheme.colorBlueDark,
         textColor: Colors.white,
         child: WidgetText.poppinsMediumWhite24(text),
