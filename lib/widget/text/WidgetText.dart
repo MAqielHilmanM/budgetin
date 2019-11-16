@@ -240,6 +240,13 @@ class WidgetText extends StatelessWidget {
         fontStyle = FontStyle.normal,
         fontWeight = FontWeight.w600;
 
+  WidgetText.montserratSemiBoldRed20(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 20.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorRed,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w600;
+
   WidgetText.montserratSemiBoldBlue20(this.text,{this.textAlign = TextAlign.start})
       : fontSize = 20.0,
         fontFamily = "Montserrat",
@@ -277,6 +284,13 @@ class WidgetText extends StatelessWidget {
 
   WidgetText.montserratBoldWhite25(this.text,{this.textAlign = TextAlign.start})
       : fontSize = 25.0,
+        fontFamily = "Montserrat",
+        color = CustomTheme.colorWhite,
+        fontStyle = FontStyle.normal,
+        fontWeight = FontWeight.w700;
+
+  WidgetText.montserratBoldWhite20(this.text,{this.textAlign = TextAlign.start})
+      : fontSize = 20.0,
         fontFamily = "Montserrat",
         color = CustomTheme.colorWhite,
         fontStyle = FontStyle.normal,
