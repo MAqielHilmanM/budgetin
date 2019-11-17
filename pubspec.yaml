@@ -27,7 +27,7 @@ dependencies:
   intl: ^0.16.0
   bubble_tab_indicator: ^0.1.4
   fl_chart: ^0.4.2
-  
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -66,6 +66,7 @@ flutter:
     - assets/images/ic_profile/ic_profile.png
     - assets/images/ic_save/ic_save.png
     - assets/images/ic_withdraw/ic_withdraw.png
+    - assets/images/download.jpeg
 
   fonts:
     - family: Montserrat

@@ -1,3 +1,8 @@
+import 'package:budgetin/screens/budget/detail/BudgetDetailPage.dart';
+import 'package:budgetin/screens/budget/list/BudgetListPage.dart';
+import 'package:budgetin/screens/dashboard/DashboardFormDialog.dart';
+import 'package:budgetin/screens/investment/list/InvestmentListPage.dart';
+import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:budgetin/widget/CustomTheme.dart';
 import 'package:budgetin/widget/cards/WidgetCard.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
@@ -6,6 +11,7 @@ import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'dart:async';
 import 'dart:math';
+
 
 class DashboardPage extends StatefulWidget {
 
@@ -53,7 +59,7 @@ class _DashboardPageState extends State<DashboardPage>  {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               WidgetText.montserratRegularBlack20("Hello, "),
-                              WidgetText.montserratBoldBlack20("Bambank!")
+                              WidgetText.montserratBoldBlack20("Bambang!")
                             ],
                           ),
                         ),
@@ -64,6 +70,7 @@ class _DashboardPageState extends State<DashboardPage>  {
                             width: 40,
                             decoration: BoxDecoration(
                               color: Colors.blue,
+                              image: DecorationImage(image: AssetImage("assets/images/download.jpeg"), fit: BoxFit.cover),
                               borderRadius: BorderRadius.all(Radius.circular(30))
                             ),
                           ),
@@ -93,7 +100,7 @@ class _DashboardPageState extends State<DashboardPage>  {
                                   padding: const EdgeInsets.only(bottom : 20.0),
                                   child: WidgetText.montserratRegularBlue18("Rp "),
                                 ),
-                                WidgetText.montserratSemiBoldBlue20("5,000,000"),
+                                WidgetText.montserratSemiBoldBlue20("3,000,000"),
                               ],
                             ),
                           ],
@@ -236,12 +243,16 @@ class _DashboardPageState extends State<DashboardPage>  {
                     mainAxisSpacing: 2,
                     crossAxisSpacing: 2),
         delegate: SliverChildListDelegate([
-          WidgetCardBudget.filled("Makan","20.000.000", "13.000.000"),
-          WidgetCardBudget.filled("Makan","20.000.000", "13.000.000"),
-          WidgetCardBudget.filled("Makan","20.000.000", "13.000.000"),
-          WidgetCardBudget.filled("Makan","20.000.000", "13.000.000"),
-          WidgetCardBudget.filled("Makan","20.000.000", "13.000.000"),
-          WidgetCardBudget.filled("Makan","20.000.000", "13.000.000"),
+          InkWell(
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => BudgetDetailPage())),
+          child: 
+          WidgetCardBudget.filled("Makan","20.000.000", "13.000.000")),
+          WidgetCardBudget.filled("Dating","10.000.000", "1.500.000"),
+          WidgetCardBudget.filled("Main","2.250.000", "1.300.000"),
+          WidgetCardBudget.filled("Beli Mobil","400.000.000", "130.000.000"),
+          WidgetCardBudget.filled("Beli Truk","20.000.000", "15.000.000"),
+          WidgetCardBudget.filled("Keluar negeri","26.000.000", "11.000.000"),
         ]),
       )
       ])
@@ -256,10 +267,18 @@ class _DashboardPageState extends State<DashboardPage>  {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image.asset("assets/images/ic_profile/ic_profile.png"),
+                  Container(
+                            height: 80,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              image: DecorationImage(image: AssetImage("assets/images/download.jpeg"), fit: BoxFit.cover),
+                              borderRadius: BorderRadius.all(Radius.circular(40))
+                            ),
+                          ),
                   Padding(
                     padding: const EdgeInsets.only(top : 15),
-                    child: WidgetText.montserratBoldWhite20("Bambang Budiyongso"),
+                    child: WidgetText.montserratBoldWhite20("Bambang Yudiyanto"),
                   )
                 ],
               ),
@@ -285,7 +304,11 @@ class _DashboardPageState extends State<DashboardPage>  {
             ListTile(
               title: WidgetText.montserratSemiBoldBlue20("Budgets"),
               leading: Image.asset("assets/images/ic_menu_budget/ic_menu_budget.png"),
-              onTap: (){},
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => 
+                  BudgetListPage()
+                ));
+              },
             ),
             Divider(
               color: CustomTheme.colorBlueDark
@@ -300,7 +323,9 @@ class _DashboardPageState extends State<DashboardPage>  {
                   child: new ListTile(
                     leading: Text(""),
                     title:WidgetText.montserratSemiBoldBlue20("Gold"),
-                    onTap: () => Navigator.of(context).pop(),
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => 
+                      InvestmentListPage()
+                    ))
                   ),
                 ),
               ],
@@ -309,25 +334,19 @@ class _DashboardPageState extends State<DashboardPage>  {
               color: CustomTheme.colorBlueDark
             ),
             ListTile(
-              title: WidgetText.montserratSemiBoldBlue20("My Profile"),
-              leading: Image.asset("assets/images/ic_menu_profile/ic_menu_profile.png"),
-              onTap: (){},
-            ),
-            Divider(
-              color: CustomTheme.colorBlueDark
-            ),
-            ListTile(
               title: WidgetText.montserratSemiBoldRed20("Log Out"),
               leading: Image.asset("assets/images/ic_menu_logout/ic_menu_logout.png"),
-              onTap: (){
-                Navigator.of(context).pop();
-              },
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => 
+                      LoginPage()
+                    ))
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => DashboardFormDialog()));
+        },
         backgroundColor: CustomTheme.colorYellow,
         child: Image.asset("assets/images/ic_plus_blue/ic_plus_blue.png", height: 20, width: 20,)
       ),

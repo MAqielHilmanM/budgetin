@@ -1,4 +1,5 @@
 import 'package:budgetin/screens/dashboard/DashboardPage.dart';
+import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:budgetin/widget/text/WidgetText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -210,7 +211,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: Text("Get Started", style: TextStyle(color: Colors.white, fontSize: 18, fontFamily: "Montserrat"),),
                 ),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>
-                  DashboardPage()
+                  LoginPage()
                 )),
               ),
             ),

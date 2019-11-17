@@ -44,7 +44,7 @@ class _InvestmentListPageState extends State<InvestmentListPage> {
                     ),
                     Center(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 47),
+                        padding: EdgeInsets.only(left: 40),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[

@@ -1,19 +1,14 @@
-import 'package:budgetin/screens/budget/form/BudgetFormDialog.dart';
-import 'package:budgetin/screens/budget/form/BudgetFormDialog.dart';
-import 'package:budgetin/screens/budget/input/BudgetInputPage.dart';
+
 import 'package:budgetin/screens/dashboard/DashboardFormDialog.dart';
-import 'package:budgetin/screens/history/InOutHistoryPage.dart';
-import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:budgetin/screens/onboarding/onboardingScreen.dart';
 import 'package:budgetin/screens/splashscreen/SplashScreen.dart';
-import 'package:budgetin/widget/form/WidgetForm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() { 
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarColor: Colors.white, //top bar color
+      statusBarColor: Colors.transparent, //top bar color
       statusBarIconBrightness: Brightness.dark, //top bar icons
       systemNavigationBarColor: Colors.white, //bottom bar color
       systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
@@ -31,9 +26,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new DashboardFormDialog(),
+      home: new SplashScreen(),
       routes: <String, WidgetBuilder>{
-        '/screens/onboarding': (BuildContext context) => DashboardFormDialog(),
+        '/screens/onboarding': (BuildContext context) => OnBoardingScreen(),
       },
     );
   }

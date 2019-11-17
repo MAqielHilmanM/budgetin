@@ -105,7 +105,9 @@ class ButtonBack extends StatelessWidget {
         shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(10.0),
             side: BorderSide(color: CustomTheme.colorBlueDark)),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
         color: CustomTheme.colorBlueDark,
         textColor: Colors.white,
         child: Center(
