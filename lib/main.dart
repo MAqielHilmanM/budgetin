@@ -3,6 +3,7 @@ import 'package:budgetin/screens/budget/form/BudgetFormDialog.dart';
 import 'package:budgetin/screens/budget/input/BudgetInputPage.dart';
 import 'package:budgetin/screens/dashboard/DashboardFormDialog.dart';
 import 'package:budgetin/screens/history/InOutHistoryPage.dart';
+import 'package:budgetin/screens/investment/formDialog/InvestmentFormDialog.dart';
 import 'package:budgetin/screens/login/LoginPage.dart';
 import 'package:budgetin/screens/onboarding/onboardingScreen.dart';
 import 'package:budgetin/screens/splashscreen/SplashScreen.dart';
@@ -31,9 +32,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new DashboardFormDialog(),
+      home: new AddInvestmentFormDialog(),
       routes: <String, WidgetBuilder>{
-        '/screens/onboarding': (BuildContext context) => DashboardFormDialog(),
+        '/screens/onboarding': (BuildContext context) => AddInvestmentFormDialog(),
       },
     );
   }
