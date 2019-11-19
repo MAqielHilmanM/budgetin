@@ -44,7 +44,7 @@ class _InvestmentListPageState extends State<InvestmentListPage> {
                     ),
                     Center(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 47),
+                        padding: EdgeInsets.only(left: 40),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -105,7 +105,6 @@ class _InvestmentListPageState extends State<InvestmentListPage> {
                         ],
                       ),
                       Container(
-                        height: 20,
                         child: Divider(
                           color: CustomTheme.colorWhite,
                           thickness: 2,

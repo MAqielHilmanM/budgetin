@@ -1,4 +1,5 @@
 import 'package:budgetin/screens/budget/form/BudgetFormDialog.dart';
+import 'package:budgetin/screens/dashboard/DashboardPage.dart';
 import 'package:budgetin/widget/CustomTheme.dart';
 import 'package:budgetin/widget/buttons/WidgetButton.dart';
 import 'package:budgetin/widget/cards/WidgetCard.dart';
@@ -14,6 +15,39 @@ class BudgetInputPage extends StatefulWidget {
 }
 
 class _BudgetInputPageState extends State<BudgetInputPage> {
+
+  void _onLoading() {
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return Dialog(
+        child: Container(
+          height: 100,
+          width: 60,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: new CircularProgressIndicator(),
+              ),
+              new Text("Loading, please wait", style: TextStyle(fontFamily: "Montserrat", color: CustomTheme.colorBlue),),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+  new Future.delayed(new Duration(seconds: 3), () {
+    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => DashboardPage()));
+    //Navigator.of(context).pop();
+    print("woii");
+  });
+}
+
   @override
   Widget build(BuildContext context) {
     double defaultScreenWidth = 400.0;
@@ -81,10 +115,10 @@ class _BudgetInputPageState extends State<BudgetInputPage> {
                       Row(
                         children: <Widget>[
                           WidgetText.montserratRegularYellow48("Rp. "),
-                          WidgetText.montserratSemiBoldYellow48("6,500,000")
+                          WidgetText.montserratSemiBoldYellow48("2,000,000")
                         ],
                       ),
-                      WidgetText.montserratSemiBoldGray24("of Rp. 20,000,000")
+                      WidgetText.montserratSemiBoldGray24("of Rp. 5,000,000")
                     ],
                   ),
                 ),
@@ -103,7 +137,7 @@ class _BudgetInputPageState extends State<BudgetInputPage> {
                 horizontal: ScreenUtil.instance.setWidth(14.0)),
             sliver: SliverGrid(
                 delegate: SliverChildListDelegate([
-                  WidgetCardBudget.input("20.000.000", "makan"),
+                  WidgetCardBudget.input("3.000.000", "makan"),
                   InkWell(
                     onTap: () {
                       showDialog(context: context,
@@ -126,11 +160,11 @@ class _BudgetInputPageState extends State<BudgetInputPage> {
                 Padding(
                     padding: EdgeInsets.only(
                         bottom: ScreenUtil.instance.setHeight(21.0))),
-                WidgetButton.large("Done"),
+                WidgetButton.large("Done", onPressed: ()=> _onLoading()),
                 Padding(
                     padding: EdgeInsets.only(
                         bottom: ScreenUtil.instance.setHeight(21.0))),
-                WidgetButton.largeOutline("Skip"),
+                WidgetButton.largeOutline("Skip", onPressed: ()=> _onLoading()),
                 Padding(
                     padding: EdgeInsets.only(
                         bottom: ScreenUtil.instance.setHeight(21.0))),

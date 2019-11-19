@@ -1,3 +1,4 @@
+import 'package:budgetin/screens/dashboard/DashboardPage.dart';
 import 'package:budgetin/screens/register/RegisterPage.dart';
 import 'package:budgetin/utils/Assets.dart';
 import 'package:budgetin/widget/CustomTheme.dart';
@@ -10,13 +11,48 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
 
+  
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  
   @override
   Widget build(BuildContext context) {
+
+  void _onLoading() {
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return Dialog(
+        child: Container(
+          height: 100,
+          width: 60,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: new CircularProgressIndicator(),
+              ),
+              new Text("Loading, please wait", style: TextStyle(fontFamily: "Montserrat", color: CustomTheme.colorBlue),),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+  new Future.delayed(new Duration(seconds: 3), () {
+    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => DashboardPage()));
+    //Navigator.of(context).pop();
+    print("woii");
+  });
+}
+
     double defaultScreenWidth = 400.0;
     double defaultScreenHeight = 810.0;
 
@@ -46,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(19.0))),
             WidgetForm.password("password", null), //put controller here
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(36.0))),
-            WidgetButton.large("Login"),
+            WidgetButton.large("Login", onPressed: () => _onLoading()),
             Padding(padding: EdgeInsets.only(bottom: ScreenUtil.instance.setHeight(126.0))),
             Container(
               child: Row(

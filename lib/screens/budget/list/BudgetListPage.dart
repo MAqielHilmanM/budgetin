@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BudgetListPage extends StatefulWidget {
-  BudgetListPage({Key key}) : super(key: key);
 
   @override
   _BudgetListPageState createState() => _BudgetListPageState();
@@ -152,17 +151,18 @@ class _BudgetListPageState extends State<BudgetListPage> {
             sliver: SliverGrid(
                 delegate: SliverChildListDelegate([
                   WidgetCardBudget.filled("makan", "20.000.000", "2.000.000"),
-                  WidgetCardBudget.filled("makan", "20.000.000", "2.000.000"),
-                  WidgetCardBudget.filled("makan", "20.000.000", "2.000.000"),
-                  WidgetCardBudget.filled("makan", "20.000.000", "2.000.000"),
-                  WidgetCardBudget.filled("makan", "20.000.000", "2.000.000"),
-                  WidgetCardBudget.filled("makan", "20.000.000", "2.000.000"),
+                  WidgetCardBudget.filled("main", "20.000.000", "2.000.000"),
+                  WidgetCardBudget.filled("jalan", "20.000.000", "2.000.000"),
+                  WidgetCardBudget.filled("dating", "20.000.000", "2.000.000"),
+                  WidgetCardBudget.filled("beli truk", "20.000.000", "2.000.000"),
+                  WidgetCardBudget.filled("beli mobil", "20.000.000", "2.000.000"),
                   InkWell(
                     onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) =>
-                              BudgetFormDialog());
+                      // showDialog(
+                      //     context: context,
+                      //     builder: (BuildContext context) =>
+                      //         BudgetFormDialog());
+                      print("woi");
                     },
                     child: WidgetCard.large(),
                   )

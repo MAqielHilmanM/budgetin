@@ -77,7 +77,7 @@ class BudgetFormDialog extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8),
                 child: WidgetForm.text(
-                  "Eg. Rp. 500.000.000",
+                  "Eg. Rp. 50.000.000",
                   null,
                   isBordered: true,
                 ),
